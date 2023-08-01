@@ -30,7 +30,14 @@ function TelaDespesas() {
           <ExibicaoTotal despesas={despesas} />
         </Box>
       </Box>
-      <TabelaDespesas despesas={despesas} />
+
+      <Box display="flex">
+        
+      </Box>
+
+
+
+      {/* <TabelaDespesas despesas={despesas} /> */}
     </div>
   );
 }

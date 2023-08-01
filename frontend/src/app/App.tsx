@@ -4,6 +4,8 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import { IUser, getDespesasEndpoint } from "./backend";
 import { TelaLogin } from "./TelaLogin";
 
+import { BasicTabs } from "./SelecaoCategoria"
+
 function App() {
   const [user, setUser] = useState<IUser | null>(null);
 

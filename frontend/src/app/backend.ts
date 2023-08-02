@@ -1,3 +1,7 @@
+export interface CategoriaComSoma {
+  descricao: string;
+  soma: number;
+}
 export interface Despesa {
   id: number;
   descricao: string;
@@ -8,7 +12,7 @@ export interface Despesa {
 }
 
 export interface IUser {
-  name: string;
+  nome: string;
   email: string;
 }
 
@@ -24,6 +28,12 @@ export function getDespesasEndpoint(): Promise<Despesa[]> {
   }).then(handleResponse);
 }
 
+export function getUserEndpoint(): Promise<IUser> {
+  return fetch(`http://localhost:3001/sessao/usuario`, {
+    credentials: "include",
+  }).then(handleResponse);
+}
+
 export function signInEndpoint(email: string, senha: string): Promise<IUser> {
   return fetch(`http://localhost:3001/sessao/criar`, {
     credentials: "include",
@@ -32,6 +42,13 @@ export function signInEndpoint(email: string, senha: string): Promise<IUser> {
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email, senha }),
+  }).then(handleResponse);
+}
+
+export function signOutEndpoint(): Promise<IUser> {
+  return fetch(`http://localhost:3001/sessao/finalizar`, {
+    credentials: "include",
+    method: "POST",
   }).then(handleResponse);
 }
 

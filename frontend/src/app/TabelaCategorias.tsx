@@ -22,8 +22,8 @@ export default function TabelaCategorias(props: TabelaCategoriaProps) {
           </TableRow>
         </TableHead>
         <TableBody>
-          {props.categorias.map((categoria) => (
-            <TableRow key={categoria.descricao}>
+          {props.categorias.map((categoria, i) => (
+            <TableRow key={i}>
               <TableCell>{categoria.descricao}</TableCell>
               <TableCell align="right">{formataRs(categoria.soma)}</TableCell>
             </TableRow>

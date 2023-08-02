@@ -102,5 +102,6 @@ export function agruparPorCategoria(despesas: Despesa[]): CategoriaComSoma[] {
     }
   });
 
-  return categoriasComSoma;
+  const categoriasComSomaSortValor = categoriasComSoma.sort((a, b) => b.soma - a.soma)
+  return categoriasComSomaSortValor;
 }
